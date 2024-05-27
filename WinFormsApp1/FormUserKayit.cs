@@ -44,7 +44,7 @@ namespace WinFormsApp1
                 using (OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Database2.accdb"))
                 {
                     baglanti.Open();
-                    string sorgu = "INSERT INTO kullaniciislemleri (userName,password) VALUES (@ad,@sifre)";
+                    string sorgu = "INSERT INTO kullaniciislemleri (userName,[password]) VALUES (@ad,@sifre)";
                     using (OleDbCommand komut = new OleDbCommand(sorgu, baglanti))
                     {
                         komut.Parameters.AddWithValue("@ad", textBox1.Text);
@@ -55,6 +55,9 @@ namespace WinFormsApp1
                 }
 
                 MessageBox.Show("kullanıcı eklendi!!");
+                FormGirisEkrani formGiris = new FormGirisEkrani();
+                formGiris.Show();
+                this.Dispose();
             }
 
             catch (Exception ex)

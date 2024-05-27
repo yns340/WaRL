@@ -72,6 +72,7 @@ namespace WinFormsApp1
         {
             FormUserKayit form = new FormUserKayit();
             form.Show();
+            this.Hide();
         }
     }
 }
