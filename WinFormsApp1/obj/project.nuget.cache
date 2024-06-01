@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XqLJJMRaYbR5pOE8BDKXL6aRvMnabp/ftEjbt8cmDZ28DlabmmXJ8wJs0z3LdBMVoEMcBQd1zGeOwi/zvTQwhQ==",
+  "dgSpecHash": "1eXyS6SoTd2LKXhiMwMxFPbgnqXlFGPIqgFVk8gAbwOtA/d6LO6blCDRpB0OE/1oh38P54duK2dHEHAlS25VAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deepb\\OneDrive\\Masaüstü\\Yeni klasör\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\deepb\\OneDrive\\Masaüstü\\PROJE\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deepb\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
     "C:\\Users\\deepb\\.nuget\\packages\\system.data.oledb\\8.0.0\\system.data.oledb.8.0.0.nupkg.sha512",

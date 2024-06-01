@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private string username;
+        private int kullanıcıID;
+
+        // Form2'nin parametre alan yapılandırıcısı
+        public Form2(string username, int kullanıcıID)
         {
             InitializeComponent();
-
+            this.username = username; // Gelen kullanıcı adını sakla
+            this.kullanıcıID = kullanıcıID;
             this.FormClosing += new FormClosingEventHandler(Form2_Closing);
         }
 
@@ -61,10 +59,10 @@ namespace WinFormsApp1
             pictureBox1.ClientSize = this.ClientSize;
         }
 
-
         private void button1Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(username, kullanıcıID); // Kullanıcı adını Form1'e parametre olarak iletiliyor
+
             form1.ClientSize = this.ClientSize;
 
             if (this.WindowState == FormWindowState.Maximized)
@@ -91,5 +89,4 @@ namespace WinFormsApp1
 
         }
     }
-
 }

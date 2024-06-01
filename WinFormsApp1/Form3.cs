@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System;
+using System.Windows.Forms;
+using static WinFormsApp1.FormGirisEkrani;
+
 namespace WinFormsApp1
 {
     public partial class Form3 : Form
@@ -16,9 +20,7 @@ namespace WinFormsApp1
         public Form3()
         {
             InitializeComponent();
-
             this.FormClosing += new FormClosingEventHandler(Form3_Closing);
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -35,11 +37,6 @@ namespace WinFormsApp1
             {
                 Application.Exit();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Form3_Resize(object sender, EventArgs e)
@@ -68,9 +65,9 @@ namespace WinFormsApp1
             pictureBox1.ClientSize = this.ClientSize;
         }
 
-        private void button1Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID);
             form1.ClientSize = this.ClientSize;
 
             if (this.WindowState == FormWindowState.Maximized)

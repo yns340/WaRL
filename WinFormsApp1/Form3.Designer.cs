@@ -44,34 +44,35 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(56, 93);
+            button1.Location = new Point(45, 74);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(98, 98);
+            button1.Size = new Size(78, 78);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1Click;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.White;
             label1.Font = new Font("Showcard Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(633, 102);
+            label1.Location = new Point(506, 82);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(249, 89);
+            label1.Size = new Size(210, 71);
             label1.TabIndex = 1;
             label1.Text = "KİTAP";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // button2
             // 
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(282, 336);
+            button2.Location = new Point(226, 269);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(299, 293);
+            button2.Size = new Size(239, 234);
             button2.TabIndex = 2;
             button2.UseVisualStyleBackColor = true;
             // 
@@ -80,9 +81,10 @@
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Zoom;
             button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(967, 336);
+            button3.Location = new Point(774, 269);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(299, 293);
+            button3.Size = new Size(239, 234);
             button3.TabIndex = 3;
             button3.UseVisualStyleBackColor = true;
             // 
@@ -90,9 +92,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Stencil", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(319, 632);
+            label2.Location = new Point(255, 506);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(231, 43);
+            label2.Size = new Size(194, 35);
             label2.TabIndex = 4;
             label2.Text = "KÜTÜPHANE";
             // 
@@ -100,9 +103,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Stencil", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(990, 632);
+            label3.Location = new Point(792, 506);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(270, 43);
+            label3.Size = new Size(226, 35);
             label3.TabIndex = 5;
             label3.Text = "OKUMA LİSTESİ";
             // 
@@ -111,16 +115,17 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1515, 869);
+            pictureBox1.Size = new Size(1212, 695);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1515, 867);
+            ClientSize = new Size(1212, 694);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button3);
@@ -130,6 +135,7 @@
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "IMDB";
