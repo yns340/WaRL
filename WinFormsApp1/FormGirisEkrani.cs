@@ -56,9 +56,14 @@ namespace WinFormsApp1
                             {
                                 KullanıcıGirişi.KullanıcıAdı = username;
                                 KullanıcıGirişi.KullanıcıID = userId;
-                                Form1 form = new Form1(username, userId);
+                                Form1 form1 = new Form1(username, userId);
 
-                                form.Show();
+                                if (this.WindowState == FormWindowState.Maximized)
+                                {
+                                    form1.WindowState = FormWindowState.Maximized;
+                                }
+
+                                form1.Show();
                                 this.Hide();
 
                                 // Debug için
@@ -106,8 +111,22 @@ namespace WinFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             FormUserKayit form = new FormUserKayit();
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                form.WindowState = FormWindowState.Maximized;
+            }
+
             form.Show();
             this.Hide();
+        }
+
+        private void FormGirisEkrani_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -105,5 +105,14 @@ namespace WinFormsApp1
                 Application.Exit();
             }
         }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            label2.Left = linkLabel1.Left;
+            CenterLabel();
+            ResizePanels();
+            ResizePictureBoxes();
+            ResizeButtons();
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace WinFormsApp1
         {
             label1.Left = (this.ClientSize.Width - label1.Width) / 2;
             ResizePictureBox();
+
             button1.Height = label1.Height;
             button1.Width = label1.Height;
         }
@@ -33,9 +34,18 @@ namespace WinFormsApp1
 
             int button2middle = this.ClientSize.Width / 4;
             int button3middle = (3 * (this.ClientSize.Width)) / 4;
+            button2.Height = 351 * ClientSize.Height / 1105;
+            button3.Height = button2.Height;
+            button2.Width = button2.Height;
+            button3.Width = button3.Height;
+
+            button2.Top = ClientSize.Height / 2 - button2.Height / 2;
+            button3.Top = ClientSize.Height / 2 - button3.Height / 2;
 
             button2.Left = button2middle - (button2.Width / 2);
             button3.Left = button3middle - (button3.Width / 2);
+
+            label1.Left = (ClientSize.Width - label1.Width) / 2;
 
             label2.Width = button2.Width;
             label2.Top = button2.Bottom;
@@ -87,6 +97,19 @@ namespace WinFormsApp1
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormFilm form = new FormFilm();
+
+            if(this.WindowState == FormWindowState.Maximized)
+            {
+                form.WindowState = FormWindowState.Maximized;
+            }
+
+            this.Hide();
+            form.Show();    
         }
     }
 }

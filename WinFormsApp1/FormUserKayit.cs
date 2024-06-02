@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Net;
+using System.Reflection.Emit;
+using System.Xml.Linq;
 
 namespace WinFormsApp1
 {
     public partial class FormUserKayit : Form
     {
-        
+
         public FormUserKayit()
         {
             InitializeComponent();
@@ -35,6 +38,9 @@ namespace WinFormsApp1
             textBox2.Width = textBox1.Width;
             label3.Left = textBox1.Left;
             label4.Left = textBox2.Left;
+            button2.Width = button1.Width;
+            button2.Left = button1.Left;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +69,27 @@ namespace WinFormsApp1
             catch (Exception ex)
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormGirisEkrani formgiris = new FormGirisEkrani();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                formgiris.WindowState = FormWindowState.Maximized;
+            }
+
+            this.Hide();
+            formgiris.Show();
+            
+        }
+
+        private void FormUserKayit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
             }
         }
     }

@@ -10,6 +10,9 @@
     <Compile Update="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormGirisEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
