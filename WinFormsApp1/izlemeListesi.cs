@@ -37,7 +37,7 @@ namespace WinFormsApp1
             DataTable watchList = new DataTable();
 
             // Veritabanına bağlanma ve izleme listesi sorgusunu yürütme
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
             {
                 string query = "SELECT filmdizilistesi.adi " +
                                "FROM filmdizilistesi " +

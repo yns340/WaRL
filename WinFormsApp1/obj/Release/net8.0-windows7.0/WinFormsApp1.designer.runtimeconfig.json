@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Fatih\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Fatih\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\deepb\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\deepb\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,

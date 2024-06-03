@@ -1,46 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Fatih\\Desktop\\LAST\\",
+  "WorkspaceRootPath": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\fatih\\desktop\\last\\winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\okumalistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\okumalistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\formfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\Fatih\\Desktop\\LAST\\winformsapp1\\formfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\okumalistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\okumalistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r (2)\\winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\izlemelistesi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,127 +46,102 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form2.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form2.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form2.cs",
-              "RelativeToolTip": "WinFormsApp1\\Form2.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T14:56:44.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "izlemeListesi.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\izlemeListesi.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\izlemeListesi.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\izlemeListesi.cs [Tasar\u0131m]",
-              "RelativeToolTip": "WinFormsApp1\\izlemeListesi.cs [Tasar\u0131m]",
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form2.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form2.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form2.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form2.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAUwIUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T09:02:27.81Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "izlemeListesi.cs",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\izlemeListesi.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\izlemeListesi.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\izlemeListesi.cs",
-              "RelativeToolTip": "WinFormsApp1\\izlemeListesi.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBIAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T09:06:11.627Z",
+              "WhenOpened": "2024-06-03T17:55:15.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form1.cs",
-              "RelativeToolTip": "WinFormsApp1\\Form1.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAAwGsAAAAAAAAA",
+              "Title": "Form2.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form2.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form2.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form2.cs [Tasar\u0131m]",
+              "RelativeToolTip": "WinFormsApp1\\Form2.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T08:42:36.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormFilm.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormFilm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\FormFilm.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormFilm.cs [Tasar\u0131m]",
-              "RelativeToolTip": "WinFormsApp1\\FormFilm.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T18:57:50.689Z",
+              "WhenOpened": "2024-06-03T17:55:09.237Z",
               "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormFilm.cs",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormFilm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\FormFilm.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormFilm.cs",
-              "RelativeToolTip": "WinFormsApp1\\FormFilm.cs",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAAwBoAAAAJAAAA",
+              "DocumentIndex": 0,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form3.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form3.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form3.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form3.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAAAH8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T18:59:47.655Z",
+              "WhenOpened": "2024-06-03T17:55:03.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form3.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form3.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form3.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\Form3.cs [Tasar\u0131m]",
+              "RelativeToolTip": "WinFormsApp1\\Form3.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T17:54:59.411Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "okumaListesi.cs",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\okumaListesi.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\okumaListesi.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\okumaListesi.cs",
+              "RelativeToolTip": "WinFormsApp1\\okumaListesi.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T17:51:40.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Form2.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form2.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form2.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form2.cs [Tasar\u0131m]",
-              "RelativeToolTip": "WinFormsApp1\\Form2.cs [Tasar\u0131m]",
+              "Title": "izlemeListesi.cs",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\izlemeListesi.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\izlemeListesi.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\izlemeListesi.cs",
+              "RelativeToolTip": "WinFormsApp1\\izlemeListesi.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAkwDYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T18:50:51.484Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\Form1.cs [Tasar\u0131m]",
-              "RelativeToolTip": "WinFormsApp1\\Form1.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T08:42:28.601Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormGirisEkrani.cs",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormGirisEkrani.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\FormGirisEkrani.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormGirisEkrani.cs",
-              "RelativeToolTip": "WinFormsApp1\\FormGirisEkrani.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAwwGMAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T08:41:48.818Z",
+              "WhenOpened": "2024-06-03T17:51:36.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "FormGirisEkrani.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormGirisEkrani.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\FormGirisEkrani.cs",
-              "ToolTip": "C:\\Users\\Fatih\\Desktop\\LAST\\WinFormsApp1\\FormGirisEkrani.cs [Tasar\u0131m]",
-              "RelativeToolTip": "WinFormsApp1\\FormGirisEkrani.cs [Tasar\u0131m]",
+              "Title": "okumaListesi.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\okumaListesi.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\okumaListesi.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\okumaListesi.cs [Tasar\u0131m]",
+              "RelativeToolTip": "WinFormsApp1\\okumaListesi.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T08:41:44.275Z",
+              "WhenOpened": "2024-06-03T17:51:04.571Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "izlemeListesi.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\izlemeListesi.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\izlemeListesi.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r (2)\\WinFormsApp1\\izlemeListesi.cs [Tasar\u0131m]",
+              "RelativeToolTip": "WinFormsApp1\\izlemeListesi.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T17:51:03.605Z",
               "EditorCaption": " [Tasar\u0131m]"
             }
           ]

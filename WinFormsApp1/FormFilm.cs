@@ -25,7 +25,7 @@ namespace WinFormsApp1
 
         private void LoadFilms()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
             {
                 string query = "SELECT * FROM filmdizilistesi";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
@@ -118,7 +118,7 @@ namespace WinFormsApp1
         {
             try
             {
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
+                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
                 {
                     string query = "INSERT INTO izlemeListesi (KullanıcıID, FilmDiziID) VALUES (@KullanıcıID, @FilmDiziID)";
                     using (OleDbCommand command = new OleDbCommand(query, connection))

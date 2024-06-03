@@ -16,10 +16,16 @@
     <Compile Update="FormGirisEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormKitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormUserKayit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="izlemeListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="okumaListesi.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

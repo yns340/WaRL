@@ -86,7 +86,7 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            Form3 form3 = new Form3(_username, kullanýcýID);
             form3.ClientSize = this.ClientSize;
 
             if (this.WindowState == FormWindowState.Maximized)
