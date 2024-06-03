@@ -38,7 +38,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Database2.accdb"))
+            using (OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
             {
                 baglanti.Open();
                 using (OleDbCommand sorgu = new OleDbCommand("select userName,password from kullaniciislemleri where userName=@ad and password=@sifre", baglanti))
@@ -88,7 +88,7 @@ namespace WinFormsApp1
         {
             userId = -1;
             string query = "SELECT Kimlik FROM kullaniciislemleri WHERE Username = ? AND Password = ?";
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Database2.accdb"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
             {
                 using (OleDbCommand command = new OleDbCommand(query, connection))
                 {

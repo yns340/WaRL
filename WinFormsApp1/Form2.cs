@@ -101,15 +101,36 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormFilm form = new FormFilm();
+            FormFilm formFilm = new FormFilm(username, kullanıcıID);
+            formFilm.ClientSize = this.ClientSize;
 
-            if(this.WindowState == FormWindowState.Maximized)
+            if (this.WindowState == FormWindowState.Maximized)
             {
-                form.WindowState = FormWindowState.Maximized;
+                formFilm.WindowState = FormWindowState.Maximized;
             }
 
             this.Hide();
-            form.Show();    
+            formFilm.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Yeni izlemeListesi formunu oluşturun
+            izlemeListesi izlemeForm = new izlemeListesi(kullanıcıID);
+
+            // Eğer bu formun boyutu bu formun boyutu ile aynı olmalı ise:
+            izlemeForm.ClientSize = this.ClientSize;
+
+            // Eğer bu formun durumu bu formun durumu ile aynı olmalı ise:
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                izlemeForm.WindowState = FormWindowState.Maximized;
+            }
+
+            // Bu formu gizleyin ve yeni formu gösterin
+            this.Hide();
+            izlemeForm.Show();
+        }
+
     }
 }

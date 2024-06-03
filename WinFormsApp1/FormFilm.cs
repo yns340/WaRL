@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class FormFilm : Form
     {
-        public FormFilm()
+        private string _username;
+        private int _kullanıcıID;
+
+        public FormFilm(string username, int kullanıcıID)
         {
             InitializeComponent();
+            this._username = username;
+            this._kullanıcıID = kullanıcıID;
         }
 
         private void FormFilm_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace WinFormsApp1
 
         private void LoadFilms()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source= Database2.accdb"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
             {
                 string query = "SELECT * FROM filmdizilistesi";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
@@ -37,8 +37,8 @@ namespace WinFormsApp1
 
         private void DisplayFilms(DataTable films)
         {
-            int panelWidth = ClientSize.Width / 3; // Her panelin genişliği formun genişliğinin üçte biri
-            int panelHeight = ClientSize.Height; // Her panelin yüksekliği formun yüksekliği kadar
+            int panelWidth = ClientSize.Width / 3;
+            int panelHeight = ClientSize.Height;
 
             for (int i = 0; i < films.Rows.Count; i++)
             {
@@ -48,18 +48,15 @@ namespace WinFormsApp1
                 {
                     Width = panelWidth,
                     Height = panelHeight,
-                    Left = (i % 3) * panelWidth, // Her panelin sol kenarı, önceki panelin sağ kenarından başlar
+                    Left = (i % 3) * panelWidth,
                     Top = (i / 3) * panelHeight,
                     BorderStyle = BorderStyle.FixedSingle,
                     BackColor = Color.White,
                 };
 
-                
-
                 PictureBox pictureBox = new PictureBox
                 {
-
-                    ImageLocation = " ",
+                    ImageLocation = " ", // Burada gerçek resim yolunu kullanabilirsiniz
                     BackColor = Color.Red,
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Width = panelWidth - 200,
@@ -75,7 +72,7 @@ namespace WinFormsApp1
                            $"{row["filmMiDiziMi"]} Yönetmeni: {row["yonetmen"]}\n" +
                            $"{row["filmMiDiziMi"]} Puanı: {row["puan"]}\n",
                     AutoSize = true,
-                    Location = new System.Drawing.Point(75, pictureBox.Bottom + 20),
+                    Location = new Point(75, pictureBox.Bottom + 20),
                 };
 
                 Button button = new Button
@@ -83,25 +80,60 @@ namespace WinFormsApp1
                     Width = pictureBox.Width,
                     Height = 75,
                     Text = "Listeye Ekle",
-                    Location = new System.Drawing.Point(75, label.Bottom + 20),
+                    Location = new Point(75, label.Bottom + 20),
+                    Tag = row["Kimlik"],
+
                 };
-
-                button.Click += (s, e) => ButtonClick(row);
-
+                button.Click += ButtonClick;
+                //button.Click += (s, e) => ButtonClick(row);
 
                 panel.Controls.Add(pictureBox);
                 panel.Controls.Add(label);
                 panel.Controls.Add(button);
                 this.Controls.Add(panel);
+
             }
 
             this.HorizontalScroll.Enabled = false;
             this.VerticalScroll.Enabled = true;
         }
 
-        private void ButtonClick(DataRow row)
+        private void ButtonClick(object sender,EventArgs e)
         {
-            MessageBox.Show("İzleme Listenize eklendi");
+            Button button = sender as Button;
+
+            int filmID = Convert.ToInt32(button.Tag);
+            //int filmID = Convert.ToInt32(row["Kimlik"]);
+            int kullaniciID = GetCurrentUserID();
+
+            AddFilmToWatchList(filmID, kullaniciID);
+        }
+
+        private int GetCurrentUserID()
+        {
+            return _kullanıcıID;
+        }
+
+        private void AddFilmToWatchList(int filmID, int kullaniciID)
+        {
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Fatih\\Desktop\\Filmler.accdb"))
+                {
+                    string query = "INSERT INTO izlemeListesi (KullanıcıID, FilmDiziID) VALUES (@KullanıcıID, @FilmDiziID)";
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
+                        command.Parameters.AddWithValue("@FilmDiziID", filmID);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("İzleme listenize eklendi");
+            }
+            catch (Exception ex){
+                MessageBox.Show(ex.Message);    
+            }
         }
 
         private void FormFilm_Resize(object sender, EventArgs e)
