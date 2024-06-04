@@ -35,6 +35,7 @@ namespace WinFormsApp1
             ResizePictureBox();
             button1.Height = label1.Height;
             button1.Width = label1.Height;
+            Form3_Resize(this, EventArgs.Empty);
         }
 
         private void Form3_Closing(object sender, FormClosingEventArgs e)

@@ -32,11 +32,12 @@
             // 
             // FormFilm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(1818, 1041);
+            ClientSize = new Size(1515, 868);
+            Margin = new Padding(2);
             Name = "FormFilm";
             Text = "FormFilm";
             FormClosing += FormFilm_FormClosing;

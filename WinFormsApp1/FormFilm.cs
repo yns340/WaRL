@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
+using static WinFormsApp1.FormGirisEkrani;
 
 namespace WinFormsApp1
 {
@@ -23,6 +24,7 @@ namespace WinFormsApp1
             LoadFilms();
         }
 
+
         private void LoadFilms()
         {
             using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
@@ -37,6 +39,7 @@ namespace WinFormsApp1
 
         private void DisplayFilms(DataTable films)
         {
+
             int panelWidth = ClientSize.Width / 3;
             int panelHeight = ClientSize.Height;
 
@@ -49,7 +52,7 @@ namespace WinFormsApp1
                     Width = panelWidth,
                     Height = panelHeight,
                     Left = (i % 3) * panelWidth,
-                    Top = (i / 3) * panelHeight,
+                    Top =  (i / 3) * panelHeight,
                     BorderStyle = BorderStyle.FixedSingle,
                     BackColor = Color.White,
                 };
@@ -98,7 +101,7 @@ namespace WinFormsApp1
             this.VerticalScroll.Enabled = true;
         }
 
-        private void ButtonClick(object sender,EventArgs e)
+        private void ButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
 
@@ -131,15 +134,17 @@ namespace WinFormsApp1
                 }
                 MessageBox.Show("İzleme listenize eklendi");
             }
-            catch (Exception ex){
-                MessageBox.Show(ex.Message);    
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void FormFilm_Resize(object sender, EventArgs e)
         {
+
             int panelWidth = ClientSize.Width / 3;
-            int panelHeight = ClientSize.Height;
+            int panelHeight = ClientSize.Height ;
 
             for (int i = 0; i < Controls.Count; i++)
             {
@@ -149,7 +154,7 @@ namespace WinFormsApp1
                     panel.Width = panelWidth;
                     panel.Height = panelHeight;
                     panel.Left = (i % 3) * panelWidth;
-                    panel.Top = (i / 3) * panelHeight;
+                    panel.Top =  (i / 3) * panelHeight;
 
                     foreach (Control control in panel.Controls)
                     {
@@ -185,6 +190,20 @@ namespace WinFormsApp1
             {
                 Application.Exit();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)//navbardaki geri dönüş tuşu için
+        {
+            Form2 form = new Form2(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); //bura doğru mu ???
+            form.ClientSize = this.ClientSize;
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                form.WindowState = FormWindowState.Maximized;
+            }
+
+            this.Hide();
+            form.Show();
         }
     }
 }

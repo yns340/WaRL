@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using static WinFormsApp1.FormGirisEkrani;
 
 namespace WinFormsApp1
 {
@@ -18,6 +19,8 @@ namespace WinFormsApp1
 
         private void LoadWatchList()
         {
+            izlemeListesi_Resize(this, EventArgs.Empty);
+
             try
             {
                 // İzleme listesi veritabanından alınıyor
@@ -49,6 +52,44 @@ namespace WinFormsApp1
             }
 
             return watchList;
+        }
+
+        private void izlemeListesi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void izlemeListesi_Resize(object sender, EventArgs e)
+        {
+            panel1.Width = ClientSize.Width;
+            panel1.Height = 89 * panel1.Width / 1516;
+
+            panel1.Top = 92;
+            panel1.Left = 52;
+            button1.Height = panel1.Height;
+            button1.Width = button1.Height;
+
+            dgv.Top = panel1.Bottom + 50;
+            dgv.Left = panel1.Left;
+
+            label1.Left = panel1.Left + button1.Width;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); //bura doğru mu ???
+            form.ClientSize = this.ClientSize;
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                form.WindowState = FormWindowState.Maximized;
+            }
+
+            this.Hide();
+            form.Show();
         }
     }
 }

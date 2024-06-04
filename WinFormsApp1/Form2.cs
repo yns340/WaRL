@@ -24,6 +24,7 @@ namespace WinFormsApp1
 
             button1.Height = label1.Height;
             button1.Width = label1.Height;
+            Form2_Resize(this, EventArgs.Empty);
         }
 
         private void Form2_Resize(object sender, EventArgs e)
