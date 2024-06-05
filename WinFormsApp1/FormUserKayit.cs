@@ -47,6 +47,7 @@ namespace WinFormsApp1
         {
             try
             {
+                //StreamWriter yaz = new StreamWriter("xxxxxxx.txt"); Hoca önerdi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 using (OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Database2.accdb"))
                 {
                     baglanti.Open();
@@ -58,6 +59,7 @@ namespace WinFormsApp1
                         komut.ExecuteNonQuery();
                     }
                     baglanti.Close();
+                    //yaz.Close(); Hoca önerdi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 }
 
                 MessageBox.Show("kullanıcı eklendi!!");

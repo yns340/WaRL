@@ -39,9 +39,15 @@ namespace WinFormsApp1
 
         private void DisplayFilms(DataTable films)
         {
+            panel1.Width = ClientSize.Width;
+            panel1.Top = 0;
+            panel1.Left = 0;
+
+            button1.Height = panel1.Height;
+            button1.Width = button1.Height;
 
             int panelWidth = ClientSize.Width / 3;
-            int panelHeight = ClientSize.Height;
+            int panelHeight = ClientSize.Height - panel1.Height;
 
             for (int i = 0; i < films.Rows.Count; i++)
             {
@@ -52,20 +58,20 @@ namespace WinFormsApp1
                     Width = panelWidth,
                     Height = panelHeight,
                     Left = (i % 3) * panelWidth,
-                    Top =  (i / 3) * panelHeight,
+                    Top = panel1.Height + (i / 3) * panelHeight,
                     BorderStyle = BorderStyle.FixedSingle,
                     BackColor = Color.White,
                 };
 
                 PictureBox pictureBox = new PictureBox
                 {
-                    ImageLocation = " ", // Burada gerçek resim yolunu kullanabilirsiniz
+                    ImageLocation = "", // ???????????????????????????????????????????????
                     BackColor = Color.Red,
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Width = panelWidth - 200,
+                    Width = panelWidth - 150,
                     Left = 75,
-                    Top = 75,
-                    Height = panelHeight - 200,
+                    Top = 50,
+                    Height = panelHeight - 300,
                 };
 
                 Label label = new Label
@@ -78,10 +84,13 @@ namespace WinFormsApp1
                     Location = new Point(75, pictureBox.Bottom + 20),
                 };
 
+                panel.Controls.Add(pictureBox);
+                panel.Controls.Add(label); //label in uzunluğunun botton tarafından bilinmesi için önceden panele ekledik
+
                 Button button = new Button
                 {
                     Width = pictureBox.Width,
-                    Height = 75,
+                    Height = 50,
                     Text = "Listeye Ekle",
                     Location = new Point(75, label.Bottom + 20),
                     Tag = row["Kimlik"],
@@ -90,8 +99,7 @@ namespace WinFormsApp1
                 button.Click += ButtonClick;
                 //button.Click += (s, e) => ButtonClick(row);
 
-                panel.Controls.Add(pictureBox);
-                panel.Controls.Add(label);
+
                 panel.Controls.Add(button);
                 this.Controls.Add(panel);
 
@@ -140,49 +148,66 @@ namespace WinFormsApp1
             }
         }
 
-        private void FormFilm_Resize(object sender, EventArgs e)
+        /*private void FormFilm_Resize(object sender, EventArgs e)
         {
+            panel1.Width = ClientSize.Width;
+            panel1.Height = (90 * panel1.Width) / 1510;
 
-            int panelWidth = ClientSize.Width / 3;
-            int panelHeight = ClientSize.Height ;
+            int panelwidth = ClientSize.Width / 3;
+            int panelheight = ClientSize.Height - panel1.Height;
 
-            for (int i = 0; i < Controls.Count; i++)
+            int sayac = 0;
+
+            for(int i = 0; i < Controls.Count; i++)
             {
                 if (Controls[i] is Panel)
                 {
-                    Panel panel = (Panel)Controls[i];
-                    panel.Width = panelWidth;
-                    panel.Height = panelHeight;
-                    panel.Left = (i % 3) * panelWidth;
-                    panel.Top =  (i / 3) * panelHeight;
+                    Panel pnl = (Panel)Controls[i];
+                    pnl.Width = panelwidth;
+                    pnl.Height = panelheight;
+                    pnl.Top = panel1.Height + (sayac / 3) * pnl.Height;
+                    pnl.Left = (sayac % 3) * pnl.Width;
 
-                    foreach (Control control in panel.Controls)
+                    foreach(Control control in pnl.Controls)
                     {
-                        if (control is PictureBox)
+                        if(control is PictureBox) 
                         {
                             PictureBox pictureBox = (PictureBox)control;
-                            pictureBox.Width = panelWidth - 150;
-                            pictureBox.Height = panelHeight - 450;
+                            pictureBox.Width = pnl.Width - 150;
                             pictureBox.Left = 75;
                             pictureBox.Top = 75;
+                            pictureBox.Height = pnl.Height - 200;
+
                         }
-                        else if (control is Label)
+
+                        else if(control is Label)
                         {
                             Label label = (Label)control;
-                            label.Location = new Point(75, panel.Controls[0].Bottom + 20);
+
+                            if (pnl.Controls.Count > 0 && pnl.Controls[0] is PictureBox pb)
+                            {
+                                label.Location = new Point(75, pb.Bottom + 20);
+                            }
                         }
-                        else if (control is Button)
+
+                        else if(control is Button) 
                         {
                             Button button = (Button)control;
-                            button.Location = new Point(75, panel.Controls[1].Bottom + 20);
-                            button.Width = panelWidth - 150;
+
+                            if (pnl.Controls.Count > 1 && pnl.Controls[1] is Label lbl)
+                            {
+                                button.Location = new Point(75, lbl.Bottom + 20);
+                                button.Width = pnl.Width - 150;
+                            }
                         }
                     }
+                    sayac++;
                 }
             }
+
             this.HorizontalScroll.Enabled = false;
             this.VerticalScroll.Enabled = true;
-        }
+        }*/
 
         private void FormFilm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -194,7 +219,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)//navbardaki geri dönüş tuşu için
         {
-            Form2 form = new Form2(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); //bura doğru mu ???
+            Form2 form = new Form2(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); 
             form.ClientSize = this.ClientSize;
 
             if (this.WindowState == FormWindowState.Maximized)

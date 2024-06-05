@@ -28,23 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKitap));
+            panel1 = new Panel();
+            button1 = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // FormFilm
+            // panel1
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(0, -2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1513, 90);
+            panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ControlLightLight;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Location = new Point(0, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(90, 90);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // FormKitap
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(1818, 1041);
+            ClientSize = new Size(1515, 868);
+            Controls.Add(panel1);
+            Margin = new Padding(2);
             Name = "FormKitap";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKitap";
             FormClosing += FormKitap_FormClosing;
             Load += FormKitap_Load;
-            Resize += FormKitap_Resize;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panel1;
+        private Button button1;
     }
 }

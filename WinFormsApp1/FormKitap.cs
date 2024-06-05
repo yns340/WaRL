@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
+using static WinFormsApp1.FormGirisEkrani;
 
 namespace WinFormsApp1
 {
@@ -37,8 +38,15 @@ namespace WinFormsApp1
 
         private void DisplayKitaplar(DataTable kitaplar)
         {
+            panel1.Top = 0;
+            panel1.Left = 0;
+            panel1.Width = ClientSize.Width;
+
+            button1.Height = panel1.Height;
+            button1.Width = button1.Height;
+
             int panelWidth = ClientSize.Width / 3;
-            int panelHeight = ClientSize.Height;
+            int panelHeight = ClientSize.Height - panel1.Height;
 
             for (int i = 0; i < kitaplar.Rows.Count; i++)
             {
@@ -49,7 +57,7 @@ namespace WinFormsApp1
                     Width = panelWidth,
                     Height = panelHeight,
                     Left = (i % 3) * panelWidth,
-                    Top = (i / 3) * panelHeight,
+                    Top = panel1.Height + (i / 3) * panelHeight,
                     BorderStyle = BorderStyle.FixedSingle,
                     BackColor = Color.White,
                 };
@@ -59,10 +67,10 @@ namespace WinFormsApp1
                     ImageLocation = " ", // Burada gerçek resim yolunu kullanabilirsiniz
                     BackColor = Color.Red,
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Width = panelWidth - 200,
+                    Width = panelWidth - 150,
                     Left = 75,
-                    Top = 75,
-                    Height = panelHeight - 200,
+                    Top = 50,
+                    Height = panelHeight - 300,
                 };
 
                 Label label = new Label
@@ -73,6 +81,9 @@ namespace WinFormsApp1
                     AutoSize = true,
                     Location = new Point(75, pictureBox.Bottom + 20),
                 };
+
+                panel.Controls.Add(pictureBox);
+                panel.Controls.Add(label); //label in uzunluğunun botton tarafından bilinmesi için önceden panele ekledik
 
                 Button button = new Button
                 {
@@ -86,8 +97,7 @@ namespace WinFormsApp1
                 button.Click += ButtonClick;
                 //button.Click += (s, e) => ButtonClick(row);
 
-                panel.Controls.Add(pictureBox);
-                panel.Controls.Add(label);
+
                 panel.Controls.Add(button);
                 this.Controls.Add(panel);
 
@@ -135,7 +145,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void FormKitap_Resize(object sender, EventArgs e)
+        /*private void FormKitap_Resize(object sender, EventArgs e)
         {
             int panelWidth = ClientSize.Width / 3;
             int panelHeight = ClientSize.Height;
@@ -176,7 +186,7 @@ namespace WinFormsApp1
             }
             this.HorizontalScroll.Enabled = false;
             this.VerticalScroll.Enabled = true;
-        }
+        }*/
 
         private void FormKitap_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -184,6 +194,20 @@ namespace WinFormsApp1
             {
                 Application.Exit();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); //bura doğru mu ???
+            form.ClientSize = this.ClientSize;
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                form.WindowState = FormWindowState.Maximized;
+            }
+
+            this.Hide();
+            form.Show();
         }
     }
 }
