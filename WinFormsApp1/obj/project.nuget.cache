@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PdznpSKevhXOMLA2gvhxnCdWa9RujQEEuJ/d8IAkl4J01lSi/L+EJFFRSgtyI5AySSq7v1Dqd2B0gPV9jb9BOw==",
+  "dgSpecHash": "hspVn09nB1V9PyLGVLr0z1la3uNItt+Pc5eIhx9k6qj38qGioOXedHQ7hIVyDq2EoyMhbYlTB4kL4kXZp+7T6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User-Y\\Desktop\\projegithub4\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\User-Y\\Desktop\\github5\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User-Y\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
     "C:\\Users\\User-Y\\.nuget\\packages\\system.data.oledb\\8.0.0\\system.data.oledb.8.0.0.nupkg.sha512",

@@ -61,10 +61,11 @@
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(1515, 868);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "FormFilm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormFilm";
+            Text = "IMDB";
             FormClosing += FormFilm_FormClosing;
             Load += FormFilm_Load;
             panel1.ResumeLayout(false);

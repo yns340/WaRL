@@ -62,10 +62,11 @@
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(1515, 868);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "FormKitap";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormKitap";
+            Text = "IMDB";
             FormClosing += FormKitap_FormClosing;
             Load += FormKitap_Load;
             panel1.ResumeLayout(false);
