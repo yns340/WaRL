@@ -34,13 +34,26 @@ namespace WinFormsApp1
                 MessageBox.Show("İzleme listesi yüklenirken bir hata oluştu: " + ex.Message);
             }
         }
+        private string RootDirectory() // string değer döndürülecek
+        {
+            DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);
+            return directory.Parent.Parent.Parent.Parent.FullName; // uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıktık
+        }
+
+        private string GetDatabasePath()
+        {
+            string dirRoot = RootDirectory();
+            return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adınızı burada belirtin
+        }
+
 
         private DataTable GetWatchListFromDatabase(int kullaniciID)
         {
             DataTable watchList = new DataTable();
+            string databasePath = GetDatabasePath();
 
             // Veritabanına bağlanma ve izleme listesi sorgusunu yürütme
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
+            using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
                 string query = "SELECT filmdizilistesi.adi " +
                                "FROM filmdizilistesi " +

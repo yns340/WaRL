@@ -30,10 +30,17 @@ namespace WinFormsApp1
             DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);
             return directory.Parent.Parent.Parent.Parent.FullName; //uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıktık
         }
+        private string GetDatabasePath()
+        {
+            string dirRoot = RootDirectory();
+            return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adınızı burada belirtin
+        }
+
 
         private void LoadFilms()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
+            string databasePath = GetDatabasePath();
+            using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
                 string query = "SELECT * FROM filmdizilistesi ORDER BY Kimlik"; //veritabanındaki kimlik sırası ile gelmesi için kullandık.
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
@@ -143,7 +150,8 @@ namespace WinFormsApp1
         {
             try
             {
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database2.accdb"))
+                string databasePath = GetDatabasePath();
+                using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
                 {
                     string query = "INSERT INTO izlemeListesi (KullanıcıID, FilmDiziID) VALUES (@KullanıcıID, @FilmDiziID)";
                     using (OleDbCommand command = new OleDbCommand(query, connection))

@@ -42,13 +42,26 @@ namespace WinFormsApp1
             button2.Left = button1.Left;
 
         }
+        private string RootDirectory() // string değer döndürülecek
+{
+    DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);
+    return directory.Parent.Parent.Parent.Parent.FullName; // uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıktık
+}
+
+private string GetDatabasePath()
+{
+    string dirRoot = RootDirectory();
+    return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adınızı burada belirtin
+}
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                string databasePath = GetDatabasePath();
                 //StreamWriter yaz = new StreamWriter("xxxxxxx.txt"); Hoca önerdi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                using (OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Database2.accdb"))
+                using (OleDbConnection baglanti = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
                 {
                     baglanti.Open();
                     string sorgu = "INSERT INTO kullaniciislemleri (userName,[password]) VALUES (@ad,@sifre)";
