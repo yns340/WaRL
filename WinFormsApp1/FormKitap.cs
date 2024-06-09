@@ -148,17 +148,40 @@ namespace WinFormsApp1
                 string databasePath = GetDatabasePath();
                 using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
                 {
-                    string query = "INSERT INTO okumaListesi (KullanıcıID, KitapID) VALUES (@KullanıcıID, @KitapID)";
-                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    string kontrolsorgu = "SELECT COUNT(*) FROM okumaListesi WHERE KullanıcıID=@KullanıcıID AND KitapID=@KitapID";
+                    using (OleDbCommand sorgukmt = new OleDbCommand(kontrolsorgu, connection))
                     {
-                        command.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
-                        command.Parameters.AddWithValue("@KitapID", KitapID);
+                        sorgukmt.Parameters.AddWithValue("@KullanıcıID,", kullaniciID);
+                        sorgukmt.Parameters.AddWithValue("@KitapID,", KitapID);
                         connection.Open();
-                        command.ExecuteNonQuery();
-                    }
+
+                        int sayı = (int)sorgukmt.ExecuteScalar();
+                        if (sayı > 0)
+                        {
+                            MessageBox.Show("Bu kitap zaten okuma listenizde bulunuyor.");
+                            
+                         }
+                       
+                        else
+                        {
+                               connection.Close();
+                               string query = "INSERT INTO okumaListesi (KullanıcıID, KitapID) VALUES (@KullanıcıID, @KitapID)";
+                                using (OleDbCommand command = new OleDbCommand(query, connection))
+                                {
+                                    command.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
+                                    command.Parameters.AddWithValue("@KitapID", KitapID);
+                                    connection.Open();
+                                    command.ExecuteNonQuery();
+                                }
+                            
+                            MessageBox.Show("Okuma listenize eklendi");
+                        }
+                     }
+                    
+                   }
+
                 }
-                MessageBox.Show("Okuma listenize eklendi");
-            }
+        
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

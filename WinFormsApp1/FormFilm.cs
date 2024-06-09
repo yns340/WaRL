@@ -152,17 +152,38 @@ namespace WinFormsApp1
             {
                 string databasePath = GetDatabasePath();
                 using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
+
                 {
-                    string query = "INSERT INTO izlemeListesi (KullanıcıID, FilmDiziID) VALUES (@KullanıcıID, @FilmDiziID)";
-                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    
+                    string kontrolsorgu = "SELECT COUNT(*) FROM  izlemeListesi WHERE KullanıcıID=@KullanıcıID AND FilmDiziID=@FilmDiziID";
+                    using (OleDbCommand kontrolkmt = new OleDbCommand(kontrolsorgu, connection))
                     {
-                        command.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
-                        command.Parameters.AddWithValue("@FilmDiziID", filmID);
+                        kontrolkmt.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
+                        kontrolkmt.Parameters.AddWithValue("@FilmDiziID", filmID);
                         connection.Open();
-                        command.ExecuteNonQuery();
+                        int sayı=(int) kontrolkmt.ExecuteScalar();
+                        if (sayı > 0)
+                        {
+                            MessageBox.Show("Bu film zaten listenizde bulunuyor");
+                        }
+                        else
+                        {
+                            connection.Close();
+                            string query = "INSERT INTO izlemeListesi (KullanıcıID, FilmDiziID) VALUES (@KullanıcıID, @FilmDiziID)";
+                            using (OleDbCommand command = new OleDbCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
+                                command.Parameters.AddWithValue("@FilmDiziID", filmID);
+                                connection.Open();
+                                command.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("İzleme listenize eklendi");
+                        }
                     }
                 }
-                MessageBox.Show("İzleme listenize eklendi");
+
+              
             }
             catch (Exception ex)
             {
