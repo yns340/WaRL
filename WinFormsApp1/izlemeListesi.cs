@@ -55,10 +55,10 @@ namespace WinFormsApp1
             // Veritabanına bağlanma ve izleme listesi sorgusunu yürütme
             using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
-                string query = "SELECT filmdizilistesi.adi " +
-                               "FROM filmdizilistesi " +
-                               "INNER JOIN izlemeListesi ON filmdizilistesi.Kimlik=izlemeListesi.FilmDiziID " +
-                               "WHERE izlemeListesi.KullanıcıID = @KullanıcıID";
+                string query = "SELECT fdl.Adı,fdl.Yıl,fdl.Yapımcı,fdl.Türü,fdl.Puan " +
+                               "FROM filmdizilistesi fdl " +
+                               "INNER JOIN izlemeListesi il ON fdl.Kimlik=il.FilmDiziID " +
+                               "WHERE il.KullanıcıID = @KullanıcıID";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
                 adapter.Fill(watchList);

@@ -96,11 +96,11 @@ namespace WinFormsApp1
                 Label label = new Label
                 {
                     Text = $"{row["filmMiDiziMi"]}\n" +
-                           $"{row["filmMiDiziMi"]} Türü: {row["turu"]}\n" +
-                           $"{row["filmMiDiziMi"]} Adı: {row["adi"]}\n" +
-                           $"{row["filmMiDiziMi"]} Yılı: {row["yil"]}\n" +
-                           $"{row["filmMiDiziMi"]} Yapımcısı: {row["yapimci"]}\n" +
-                           $"{row["filmMiDiziMi"]} Puanı: {row["puan"]}\n",
+                           $"{row["filmMiDiziMi"]} Türü: {row["Türü"]}\n" +
+                           $"{row["filmMiDiziMi"]} Adı: {row["Adı"]}\n" +
+                           $"{row["filmMiDiziMi"]} Yılı: {row["Yıl"]}\n" +
+                           $"{row["filmMiDiziMi"]} Yapımcısı: {row["Yapımcı"]}\n" +
+                           $"{row["filmMiDiziMi"]} Puanı: {row["Puan"]}\n",
                     AutoSize = true,
                     Location = new Point(75, pictureBox.Bottom + 20),
                 };

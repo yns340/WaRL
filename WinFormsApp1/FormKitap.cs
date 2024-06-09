@@ -41,7 +41,7 @@ namespace WinFormsApp1
             string databasePath = GetDatabasePath();
             using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
-                string query = "SELECT * FROM Kitaplar";
+                string query = "SELECT * FROM Kitaplar order by KitapID";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable kitaplar = new DataTable();
                 adapter.Fill(kitaplar);
@@ -75,9 +75,14 @@ namespace WinFormsApp1
                     BackColor = Color.White,
                 };
 
+
+                string imageName = row["Kapak"].ToString();
+                string dirRoot = RootDirectory();
+                string imagePath = Path.Combine(dirRoot, "WinFormsApp1", "Kapaklar", imageName);
+
                 PictureBox pictureBox = new PictureBox
                 {
-                    ImageLocation = " ", // Burada gerçek resim yolunu kullanabilirsiniz
+                    ImageLocation = imagePath, // Burada gerçek resim yolunu kullanabilirsiniz
                     BackColor = Color.Red,
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Width = panelWidth - 150,
@@ -85,17 +90,18 @@ namespace WinFormsApp1
                     Top = 50,
                     Height = panelHeight - 300,
                 };
+                panel.Controls.Add(pictureBox);
 
                 Label label = new Label
                 {
                     Text = $"Kitabın Adı: {row["KitapAdı"]}\n" +
                            $"Kitabın Türleri: {row["Türler"]}\n" +
-                           $"Kitabın Yazarı: {row["Yazar"]}\n",
+                           $"Kitabın Yazarı: {row["Yazar"]}\n"+
+                           $"Kitabın Puanı:{row["Puan"]}\n",
                     AutoSize = true,
                     Location = new Point(75, pictureBox.Bottom + 20),
                 };
 
-                panel.Controls.Add(pictureBox);
                 panel.Controls.Add(label); //label in uzunluğunun botton tarafından bilinmesi için önceden panele ekledik
 
                 Button button = new Button

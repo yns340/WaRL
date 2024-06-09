@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(okumaListesi));
             dgv = new DataGridView();
             panel1 = new Panel();
@@ -39,30 +44,68 @@
             // 
             // dgv
             // 
-            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(54, 203);
-            dgv.Margin = new Padding(4, 5, 4, 5);
+            dataGridViewCellStyle1.BackColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.BackgroundColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgv.ColumnHeadersHeight = 27;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgv.DefaultCellStyle = dataGridViewCellStyle3;
+            dgv.EditMode = DataGridViewEditMode.EditOnF2;
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.Location = new Point(141, 111);
+            dgv.Margin = new Padding(4);
             dgv.Name = "dgv";
-            dgv.RowHeadersWidth = 51;
-            dgv.Size = new Size(594, 374);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgv.RowHeadersVisible = false;
+            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgv.Size = new Size(751, 316);
             dgv.TabIndex = 1;
+            dgv.CellContentClick += dgv_CellContentClick;
             // 
             // panel1
             // 
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(54, 76);
+            panel1.Location = new Point(38, 46);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1400, 99);
+            panel1.Size = new Size(980, 59);
             panel1.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(105, 18);
+            label1.Location = new Point(74, 11);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(396, 65);
+            label1.Size = new Size(269, 44);
             label1.TabIndex = 1;
             label1.Text = "OKUMA LİSTESİ";
             // 
@@ -70,25 +113,27 @@
             // 
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Location = new Point(0, -3);
+            button1.Location = new Point(0, -2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(99, 99);
+            button1.Size = new Size(69, 59);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // okumaListesi
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1515, 868);
+            ClientSize = new Size(1060, 521);
             Controls.Add(panel1);
             Controls.Add(dgv);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "okumaListesi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "okumaListesi";
             FormClosing += okumaListesi_FormClosing;
+            Load += okumaListesi_Load;
             Resize += okumaListesi_Resize;
             ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
             panel1.ResumeLayout(false);

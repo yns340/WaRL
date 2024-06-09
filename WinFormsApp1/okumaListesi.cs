@@ -14,10 +14,10 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             _kullaniciID = kullaniciID;
-            LoadWatchList();
+            LoadReadingList();
         }
 
-        private void LoadWatchList()
+        private void LoadReadingList()
         {
             okumaListesi_Resize(this, EventArgs.Empty);
 
@@ -54,10 +54,10 @@ namespace WinFormsApp1
             // Veritabanına bağlanma ve okuma listesi sorgusunu yürütme
             using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
-                string query = "SELECT Kitaplar.KitapAdı " +
-                               "FROM Kitaplar " +
-                               "INNER JOIN okumaListesi ON Kitaplar.KitapID=okumaListesi.KitapID " +
-                               "WHERE okumaListesi.KullanıcıID = @KullanıcıID";
+                string query = "SELECT Kitaplar.KitapAdı,Kitaplar.Yazar,Kitaplar.Türler,Kitaplar.Puan " +
+               "FROM Kitaplar " +
+               "INNER JOIN okumaListesi ON Kitaplar.KitapID=okumaListesi.KitapID " +
+               "WHERE okumaListesi.KullanıcıID = @KullanıcıID";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
                 adapter.Fill(readingList);
@@ -84,7 +84,7 @@ namespace WinFormsApp1
             button1.Height = panel1.Height;
             button1.Width = button1.Height;
 
-            dgv.Top = panel1.Bottom + 50 ;
+            dgv.Top = panel1.Bottom + 50;
             dgv.Left = panel1.Left;
 
             label1.Left = panel1.Left + button1.Width;
@@ -103,6 +103,16 @@ namespace WinFormsApp1
 
             this.Hide();
             form.Show();
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void okumaListesi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
