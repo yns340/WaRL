@@ -60,7 +60,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(-2, 0);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1213, 702);
             pictureBox1.TabIndex = 1;
@@ -73,7 +73,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Cursor = Cursors.Hand;
             button1.Location = new Point(45, 74);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(78, 78);
             button1.TabIndex = 2;
@@ -87,7 +87,7 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Stencil", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.Location = new Point(226, 269);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(239, 234);
             button2.TabIndex = 3;
@@ -102,7 +102,7 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Stencil", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.Location = new Point(774, 269);
-            button3.Margin = new Padding(8, 8, 8, 8);
+            button3.Margin = new Padding(8);
             button3.Name = "button3";
             button3.Size = new Size(239, 234);
             button3.TabIndex = 4;
@@ -151,10 +151,10 @@
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "IMDB";
+            Text = "WaRL";
             FormClosing += Form2_Closing;
             Load += Form2_Load;
             Resize += Form2_Resize;

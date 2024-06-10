@@ -17,6 +17,7 @@ namespace WinFormsApp1
             LoadWatchList();
         }
 
+
         private void LoadWatchList()
         {
             izlemeListesi_Resize(this, EventArgs.Empty);

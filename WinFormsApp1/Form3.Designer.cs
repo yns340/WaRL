@@ -142,7 +142,7 @@
             Margin = new Padding(2);
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "IMDB";
+            Text = "WaRL";
             FormClosing += Form3_Closing;
             Load += Form3_Load;
             Resize += Form3_Resize;
