@@ -47,10 +47,10 @@
             panel1.BackColor = Color.FromArgb(0, 0, 0, 0);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(39, 52);
-            panel1.Margin = new Padding(2, 3, 2, 3);
+            panel1.Location = new Point(34, 39);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1143, 87);
+            panel1.Size = new Size(1000, 65);
             panel1.TabIndex = 1;
             // 
             // label1
@@ -58,10 +58,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(192, 64, 0);
-            label1.Location = new Point(411, 18);
+            label1.Location = new Point(360, 14);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(322, 54);
+            label1.Size = new Size(260, 44);
             label1.TabIndex = 1;
             label1.Text = "İZLEME LİSTESİ";
             // 
@@ -71,9 +71,9 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Location = new Point(3, 1);
-            button1.Margin = new Padding(2, 3, 2, 3);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(85, 84);
+            button1.Size = new Size(74, 63);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -106,8 +106,8 @@
             dgv.DefaultCellStyle = dataGridViewCellStyle3;
             dgv.EditMode = DataGridViewEditMode.EditOnF2;
             dgv.EnableHeadersVisualStyles = false;
-            dgv.Location = new Point(184, 147);
-            dgv.Margin = new Padding(5);
+            dgv.Location = new Point(161, 110);
+            dgv.Margin = new Padding(4, 4, 4, 4);
             dgv.Name = "dgv";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.GradientInactiveCaption;
@@ -121,17 +121,18 @@
             dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
             dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dgv.Size = new Size(858, 421);
+            dgv.Size = new Size(792, 316);
             dgv.TabIndex = 2;
             // 
             // izlemeListesi
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Resource1.izleme;
-            ClientSize = new Size(1211, 695);
+            ClientSize = new Size(1060, 521);
             Controls.Add(dgv);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "izlemeListesi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "İzleme Listesi";

@@ -109,8 +109,8 @@ namespace WinFormsApp1
                     {
                         Text = $"Kitabın Adı: {row["KitapAdı"]}\n" +
                                $"Kitabın Türleri: {row["Türler"]}\n" +
-                               $"Kitabın Yazarı: {row["Yazar"]}\n" +
-                               $"Kitabın Puanı: {row["Puan"]}\n",
+                               $"Kitabın Yazarı: {row["Yazar"]}\n",
+                               
                         AutoSize = true,
                         Location = new Point(75, pictureBox.Bottom + 20),
                     };
