@@ -82,7 +82,7 @@ namespace WinFormsApp1
 
                 PictureBox pictureBox = new PictureBox
                 {
-                    ImageLocation = imagePath, // Burada gerçek resim yolunu kullanabilirsiniz
+                    ImageLocation = imagePath,
                     BackColor = Color.Red,
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Width = panelWidth - 150,
@@ -114,7 +114,7 @@ namespace WinFormsApp1
 
                 };
                 button.Click += ButtonClick;
-                //button.Click += (s, e) => ButtonClick(row);
+                
 
 
                 panel.Controls.Add(button);
@@ -188,49 +188,6 @@ namespace WinFormsApp1
             }
         }
 
-        /*private void FormKitap_Resize(object sender, EventArgs e)
-        {
-            int panelWidth = ClientSize.Width / 3;
-            int panelHeight = ClientSize.Height;
-
-            for (int i = 0; i < Controls.Count; i++)
-            {
-                if (Controls[i] is Panel)
-                {
-                    Panel panel = (Panel)Controls[i];
-                    panel.Width = panelWidth;
-                    panel.Height = panelHeight;
-                    panel.Left = (i % 3) * panelWidth;
-                    panel.Top = (i / 3) * panelHeight;
-
-                    foreach (Control control in panel.Controls)
-                    {
-                        if (control is PictureBox)
-                        {
-                            PictureBox pictureBox = (PictureBox)control;
-                            pictureBox.Width = panelWidth - 150;
-                            pictureBox.Height = panelHeight - 450;
-                            pictureBox.Left = 75;
-                            pictureBox.Top = 75;
-                        }
-                        else if (control is Label)
-                        {
-                            Label label = (Label)control;
-                            label.Location = new Point(75, panel.Controls[0].Bottom + 20);
-                        }
-                        else if (control is Button)
-                        {
-                            Button button = (Button)control;
-                            button.Location = new Point(75, panel.Controls[1].Bottom + 20);
-                            button.Width = panelWidth - 150;
-                        }
-                    }
-                }
-            }
-            this.HorizontalScroll.Enabled = false;
-            this.VerticalScroll.Enabled = true;
-        }*/
-
         private void FormKitap_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -241,7 +198,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); //bura doğru mu ???
+            Form3 form = new Form3(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID); 
             form.ClientSize = this.ClientSize;
 
             if (this.WindowState == FormWindowState.Maximized)

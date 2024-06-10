@@ -22,6 +22,8 @@ namespace WinFormsApp1
             ResizePanels();
             ResizePictureBoxes();
             ResizeButtons();
+            linkLabel1.Left = pictureBox3.Left - linkLabel1.Width;
+            label2.Left = linkLabel1.Left;
         }
 
         private void UpdateUserLinkLabel()

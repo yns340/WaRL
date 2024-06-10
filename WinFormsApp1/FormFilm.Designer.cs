@@ -36,6 +36,8 @@
             // 
             // panel1
             // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(button1);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
