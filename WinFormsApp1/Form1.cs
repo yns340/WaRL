@@ -8,7 +8,7 @@ namespace WinFormsApp1
         private string _username;
         private int kullanýcýID;
 
-        public Form1(string username, int kullanýcýID)
+        public Form1(string username, int kullanýcýID) //giriþ ekranýndan alýnan kullanýcý id si ve kullanýcý adýný parametre olarak aldýk
         {
             InitializeComponent();
             this._username = username;
@@ -29,7 +29,7 @@ namespace WinFormsApp1
         private void UpdateUserLinkLabel()
         {
             linkLabel1.Text = _username;
-            label2.Text = "ID:" + Convert.ToString(kullanýcýID);
+            label2.Text = "ID:" + Convert.ToString(kullanýcýID); //parametre olarak aldýðýmýz kullanýcý id ve kullanýcý adýný etiket olarak gösterdik
         }
 
         private void CenterLabel()
@@ -51,7 +51,7 @@ namespace WinFormsApp1
             panel2.Left = panel1.Width;
         }
 
-        private void ResizePictureBoxes()
+        private void ResizePictureBoxes() //film/dizi ve kitap butonlarýnýn üstüne koyulan resimlerin boyutlarý
         {
             if (pictureBox1 != null)
             {
@@ -72,7 +72,7 @@ namespace WinFormsApp1
             button2.Top = pictureBox2.Bottom;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // film/dizi sekmesine gitmeyi saðlayan butonun fonksiyonu
         {
             Form2 form2 = new Form2(KullanýcýGiriþi.KullanýcýAdý, KullanýcýGiriþi.KullanýcýID);
             form2.ClientSize = this.ClientSize;
@@ -86,7 +86,7 @@ namespace WinFormsApp1
             form2.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)  //kitap sekmesine gitmeyi saðlayan butonun fonksiyonu
         {
             Form3 form3 = new Form3(_username, kullanýcýID);
             form3.ClientSize = this.ClientSize;
@@ -100,7 +100,7 @@ namespace WinFormsApp1
             form3.Show();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) //form 2 veya form 3 e geçiþi saðlayan butonlara basýldýktan sonra form1 in arkaplanda kapanmasýný saðlayan fonksiyon
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {

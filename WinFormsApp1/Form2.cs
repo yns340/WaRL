@@ -27,7 +27,7 @@ namespace WinFormsApp1
             Form2_Resize(this, EventArgs.Empty);
         }
 
-        private void Form2_Resize(object sender, EventArgs e)
+        private void Form2_Resize(object sender, EventArgs e) //form 2 sekmesi açılırken boyutunun nasıl olacağı fonksiyonu
         {
             ResizePictureBox();
             button1.Height = label1.Height;
@@ -57,9 +57,9 @@ namespace WinFormsApp1
             label3.Left = button3middle - (label3.Width / 2);
         }
 
-        private void Form2_Closing(object sender, FormClosingEventArgs e)
+        private void Form2_Closing(object sender, FormClosingEventArgs e) //buton aracılığıyla form 2 sekmesinden başka sekmeye geçişte form 3ün kapanmasını sağlayan fonksiyon
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason == CloseReason.UserClosing) //butona basıldıktan sonra 
             {
                 Application.Exit();
             }
@@ -70,7 +70,7 @@ namespace WinFormsApp1
             pictureBox1.ClientSize = this.ClientSize;
         }
 
-        private void button1Click(object sender, EventArgs e)
+        private void button1Click(object sender, EventArgs e) //form 1 sekmesine geri dönüşü sağlayan buton fonksiyonu
         {
             Form1 form1 = new Form1(username, kullanıcıID); // Kullanıcı adını Form1'e parametre olarak iletiliyor
 
@@ -85,20 +85,6 @@ namespace WinFormsApp1
             form1.Show();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {

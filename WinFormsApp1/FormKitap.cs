@@ -20,10 +20,6 @@ namespace WinFormsApp1
             InitializeComponent();
             this._username = username;
             this._kullanıcıID = kullanıcıID;
-            // Checkbox'ların durum değişikliklerini izlemek için olayları ata
-            checkBox1.CheckedChanged += CheckBox_CheckedChanged;
-            checkBox2.CheckedChanged += CheckBox_CheckedChanged;
-            // Diğer checkboxlar için aynı şekilde devam edebilirsiniz
         }
 
         private void FormKitap_Load(object sender, EventArgs e)
@@ -107,7 +103,7 @@ namespace WinFormsApp1
                         Text = $"Kitabın Adı: {row["KitapAdı"]}\n" +
                                $"Kitabın Türleri: {row["Türler"]}\n" +
                                $"Kitabın Yazarı: {row["Yazar"]}\n",
-                               
+
                         AutoSize = true,
                         Location = new Point(75, pictureBox.Bottom + 20),
                     };

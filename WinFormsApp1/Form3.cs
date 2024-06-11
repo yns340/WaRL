@@ -38,7 +38,7 @@ namespace WinFormsApp1
             Form3_Resize(this, EventArgs.Empty);
         }
 
-        private void Form3_Closing(object sender, FormClosingEventArgs e)
+        private void Form3_Closing(object sender, FormClosingEventArgs e) //buton aracılığıyla form 3 sekmesinden başka sekmeye geçişte form 3ün kapanmasını sağlayan fonksiyon
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -46,13 +46,13 @@ namespace WinFormsApp1
             }
         }
 
-        private void Form3_Resize(object sender, EventArgs e)
+        private void Form3_Resize(object sender, EventArgs e) //form 3 sekmesi açılırken boyutunun nasıl olacağı fonksiyonu
         {
             ResizePictureBox();
             button1.Height = label1.Height;
             button1.Width = label1.Height;
 
-            int button2middle = this.ClientSize.Width / 4;
+            int button2middle = this.ClientSize.Width / 4;   //butonların boyut ve konumları
             int button3middle = (3 * (this.ClientSize.Width)) / 4;
             button2.Height = 351 * ClientSize.Height / 1105;
             button3.Height = button2.Height;
@@ -80,7 +80,7 @@ namespace WinFormsApp1
         {
             pictureBox1.ClientSize = this.ClientSize;
         }
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e) //form 1 sekmesine geri dönüşü sağlayan buton fonksiyonu
         {
             Form1 form1 = new Form1(KullanıcıGirişi.KullanıcıAdı, KullanıcıGirişi.KullanıcıID);
             form1.ClientSize = this.ClientSize;
@@ -106,24 +106,23 @@ namespace WinFormsApp1
             this.Hide();
             formkitap.Show();
         }
-            private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Yeni izlemeListesi formunu oluşturun
+            okumaListesi okumaForm = new okumaListesi(kullanıcıID);
+
+            // Eğer bu formun boyutu bu formun boyutu ile aynı olmalı ise:
+            okumaForm.ClientSize = this.ClientSize;
+
+            // Eğer bu formun durumu bu formun durumu ile aynı olmalı ise:
+            if (this.WindowState == FormWindowState.Maximized)
             {
-                // Yeni izlemeListesi formunu oluşturun
-                okumaListesi okumaForm = new okumaListesi(kullanıcıID);
-
-                // Eğer bu formun boyutu bu formun boyutu ile aynı olmalı ise:
-                okumaForm.ClientSize = this.ClientSize;
-
-                // Eğer bu formun durumu bu formun durumu ile aynı olmalı ise:
-                if (this.WindowState == FormWindowState.Maximized)
-                {
                 okumaForm.WindowState = FormWindowState.Maximized;
-                }
-
-                // Bu formu gizleyin ve yeni formu gösterin
-                this.Hide();
-                okumaForm.Show();
             }
 
+            // Bu formu gizleyin ve yeni formu gösterin
+            this.Hide();
+            okumaForm.Show();
         }
     }
+}
