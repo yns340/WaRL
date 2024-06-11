@@ -17,7 +17,7 @@ namespace WinFormsApp1
     public partial class FormUserKayit : Form
     {
 
-        public FormUserKayit()
+        public FormUserKayit()  
         {
             InitializeComponent();
         }
@@ -42,28 +42,28 @@ namespace WinFormsApp1
             button2.Left = button1.Left;
 
         }
-        private string RootDirectory() // string değer döndürülecek
+        private string RootDirectory() // Kullanıcının .sln uygulamasının olduğu dizini almasını sağlayan method
         {
             DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);
-            return directory.Parent.Parent.Parent.Parent.FullName; // uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıktık
+            return directory.Parent.Parent.Parent.Parent.FullName; // uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıkıldı.
         }
 
-        private string GetDatabasePath()
+        private string GetDatabasePath() // RootDirectoryle alınan yol ile istediğimiz klasorü birleştirmemizi sağlayan method
         {
             string dirRoot = RootDirectory();
-            return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adınızı burada belirtin
+            return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adımız ile rootdirectoryden geleni birleştirildi.
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Kayıt işlemini gerçekleştiren butona basıldığında gerçekleşenler
         {
             try
             {
-                string databasePath = GetDatabasePath();
-                using (OleDbConnection baglanti = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
+                string databasePath = GetDatabasePath(); // Dinamik veritabanı yolunun bağlantı ıcın kullanılması amacıyla değişkene atandı.
+                using (OleDbConnection baglanti = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}")) // veritabanı bağlantısının gerçekleştirilmesi
                 {
                     baglanti.Open();
-                    string sorgu = "INSERT INTO kullaniciislemleri (userName,[password]) VALUES (@ad,@sifre)";
+                    string sorgu = "INSERT INTO kullaniciislemleri (userName,[password]) VALUES (@ad,@sifre)";   // Veritabanına girilen parametrelerin kaydedilmesi 
                     using (OleDbCommand komut = new OleDbCommand(sorgu, baglanti))
                     {
                         komut.Parameters.AddWithValue("@ad", textBox1.Text);
@@ -74,7 +74,7 @@ namespace WinFormsApp1
                 }
 
                 MessageBox.Show("kullanıcı eklendi!!");
-                FormGirisEkrani formGiris = new FormGirisEkrani();
+                FormGirisEkrani formGiris = new FormGirisEkrani();  // kulllanıcı eklendıkten sonra giriş ekranıa geri donüldü
                 formGiris.Show();
                 this.Dispose();
             }
@@ -85,7 +85,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // kullanıcı vazgeçerse herhangi bir kayıt işlemi yapmadan geri donülen vazgeç butonu
         {
             FormGirisEkrani formgiris = new FormGirisEkrani();
             if (this.WindowState == FormWindowState.Maximized)
@@ -98,7 +98,7 @@ namespace WinFormsApp1
 
         }
 
-        private void FormUserKayit_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormUserKayit_FormClosing(object sender, FormClosingEventArgs e) //Formun doğru şekilde kapatılması için
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {

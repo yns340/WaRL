@@ -55,10 +55,10 @@ namespace WinFormsApp1
         private void DisplayFilms(DataTable films) //filmleri dinamik olarak oluşturan fonksiyon
         {
             
-            var selectedGenres = GetSelectedGenres();
+            var selectedGenres = GetSelectedGenres(); //checkboxlarla seçilen türler alındı.
 
             
-            foreach (Control control in this.Controls.OfType<Panel>().Where(panel => panel != panel1).ToList())
+            foreach (Control control in this.Controls.OfType<Panel>().Where(panel => panel != panel1).ToList()) // panel1 haricindeki diğer panelleri temizlenmesi sağlandı.
             {
                 this.Controls.Remove(control);
                 control.Dispose();
@@ -72,7 +72,7 @@ namespace WinFormsApp1
                 DataRow row = films.Rows[i]; //Satırları satır bilgisi olarak tutmak için 
 
                 
-                if (selectedGenres.All(genre => row["Türü"].ToString().Contains(genre)))
+                if (selectedGenres.All(genre => row["Türü"].ToString().Contains(genre))) //seçilen türlere göre uyumlu filmlerin getirilmesi için kontrol.
                 {
                     Panel panel = new Panel
                     {
@@ -214,39 +214,34 @@ namespace WinFormsApp1
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            FilterFilmsByGenres(); // Checkbox durumları değiştiğinde filmleri filtrele
+            FilterFilmsByGenres(); // Checkbox durumları değiştiğinde filmleri filtrelemek için metodun cağrılması.
         }
 
         private void FilterFilmsByGenres()
         {
             var selectedGenres = GetSelectedGenres(); // Seçilen türleri al
 
-            // Seçilen türlere tam olarak eşleşen filmleri filtrele
-            var filteredRows = films.AsEnumerable()
-                                     .Where(row => selectedGenres.All(genre => row["Türü"].ToString().Contains(genre)))
+            var filteredRows = films.AsEnumerable()   // Seçili türleri filtrelemek için yeni bir değişken
+                                     .Where(row => selectedGenres.All(genre => row["Türü"].ToString().Contains(genre))) 
                                      .ToList();
 
             if (filteredRows.Any())
             {
-                // Filtrelenmiş satırları kullanarak filmleri yeniden görüntüle
-                DisplayFilms(filteredRows.CopyToDataTable());
+                DisplayFilms(filteredRows.CopyToDataTable());      // Filtrelenmiş satırları kullanarak filmleri yeniden görüntüle
             }
             else
             {
-                MessageBox.Show("Seçilen türe uygun film bulunamadı.");
-                // Tüm filmleri göster
+                MessageBox.Show("Seçilen türe uygun film bulunamadı.");     // Türe uygun fılm bulunmadıktan sonra tüm filmleri göster
                 DisplayFilms(films);
             }
         }
 
-        private List<string> GetSelectedGenres()
+        private List<string> GetSelectedGenres() // Checkboxlardan seçili olanların textlerini alarak aradığımız türleri almak amacıyla yazılmış method.
         {
             List<string> selectedGenres = new List<string>();
 
-            // Panel1 içindeki tüm kontrolleri kontrol et
-            foreach (Control control in panel1.Controls)
+            foreach (Control control in panel1.Controls) // Tüm checkboxlar panel1 içerisinde bulunuyor panel1dekı checkboxlardan secılı olanlarının metınlerını eklemek ıcın dongu.
             {
-                // Kontrol bir checkbox ise ve işaretliyse, türünü seçilen türler listesine ekle
                 if (control is CheckBox checkBox && checkBox.Checked)
                 {
                     selectedGenres.Add(checkBox.Text);

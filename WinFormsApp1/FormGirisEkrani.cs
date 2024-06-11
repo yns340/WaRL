@@ -6,7 +6,7 @@ namespace WinFormsApp1
 {
     public partial class FormGirisEkrani : Form
     {
-        public static class KullanıcıGirişi
+        public static class KullanıcıGirişi  // Girilen kullanıcının gerekli bilgilerini tutmak amacıyla oluşturulmuş class
         {
             public static string KullanıcıAdı { get; set; }
             public static int KullanıcıID { get; set; }
@@ -36,24 +36,24 @@ namespace WinFormsApp1
             button2.Left = pictureBox1.Width + (textBox1.Width - button2.Width) + (ClientSize.Width - pictureBox1.Width - textBox1.Width) / 2;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  // Giriş yapmak için butona basıldığında gerçekleşen işlemler
         {
             string databasePath = GetDatabasePath();
-            using (OleDbConnection baglanti = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
+            using (OleDbConnection baglanti = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}")) //veritabanı bağlantısının gerçekleştirilmesi
             {
                 baglanti.Open();
-                using (OleDbCommand sorgu = new OleDbCommand("select userName,password from kullaniciislemleri where userName=@ad and password=@sifre", baglanti))
+                using (OleDbCommand sorgu = new OleDbCommand("select userName,password from kullaniciislemleri where userName=@ad and password=@sifre", baglanti)) //Girilen kullanıcı  bilgileri ile veritabanındaki bilgilerin uyumluluğu denetlendi.
                 {
                     sorgu.Parameters.AddWithValue("@ad", textBox1.Text);
                     sorgu.Parameters.AddWithValue("@sifre", textBox2.Text);
                     using (OleDbDataReader dr = sorgu.ExecuteReader())
                     {
-                        if (dr.Read())
+                        if (dr.Read()) // OleDbDataReader ile sorgu gerçekleştirildi.
                         {
                             string username = textBox1.Text;
                             string password = textBox2.Text;
 
-                            if (IsValidUser(username, password, out int userId))
+                            if (IsValidUser(username, password, out int userId)) // kullanıcı girişi başarılı oldugunda kullanıcının gerekli bilgileri kayıt altına alındı ve diğer formlara aktarıldı.
                             {
                                 KullanıcıGirişi.KullanıcıAdı = username;
                                 KullanıcıGirişi.KullanıcıID = userId;
@@ -67,12 +67,6 @@ namespace WinFormsApp1
                                 form1.Show();
                                 this.Hide();
                             }
-
-                            else
-                            {
-                                
-                                MessageBox.Show("IsValidUser metodu başarısız oldu.");
-                            }
                         }
                         else
                         {
@@ -82,25 +76,25 @@ namespace WinFormsApp1
                 }
             }
         }
-        private string RootDirectory() // string değer döndürülecek
+        private string RootDirectory() // Kullanıcının .sln uygulamasının olduğu dizini almasını sağlayan method
         {
             DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);
-            return directory.Parent.Parent.Parent.Parent.FullName; // uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıktık
+            return directory.Parent.Parent.Parent.Parent.FullName; // uygulama debug içinde çalıştığından en dış klasör olan .sln nin olduğu dizine dek çıkıldı.
         }
 
-        private string GetDatabasePath()
+        private string GetDatabasePath() // RootDirectoryle alınan yol ile istediğimiz klasorü birleştirmemizi sağlayan method
         {
             string dirRoot = RootDirectory();
-            return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adınızı burada belirtin
+            return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb"); // Veritabanı dosya adımız ile rootdirectoryden geleni birleştirildi.
         }
 
-        private bool IsValidUser(string username, string password, out int userId)
+        private bool IsValidUser(string username, string password, out int userId) // Kullanıcının girdiği bilgilerle veritabanındaki bilgilerin doğruluğunu kontrol eden method.
         {
             userId = -1;
-            string query = "SELECT Kimlik FROM kullaniciislemleri WHERE Username = ? AND Password = ?";
+            string query = "SELECT Kimlik FROM kullaniciislemleri WHERE Username = ? AND Password = ?";  //Gerekli bilgileri veritabanından cekme işlemi
             string databasePath = GetDatabasePath();
 
-            using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
+            using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}")) // Veritabanı bağlantısı 
             {
                 using (OleDbCommand command = new OleDbCommand(query, connection))
                 {
@@ -111,7 +105,7 @@ namespace WinFormsApp1
                     var result = command.ExecuteScalar();
                     if (result != null)
                     {
-                        userId = Convert.ToInt32(result);
+                        userId = Convert.ToInt32(result);    // Kullanıcı girşi gerçekleştikten sonra hangi kullanıcı idye sahip olunduğunun geri döndürülmesi.
                         return true;
                     }
                 }
@@ -120,7 +114,7 @@ namespace WinFormsApp1
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Kayıt olmak için kayıt ol butonuna basıldıktan sonra kayıtol formuna geçiş yapıldı.
         {
             FormUserKayit form = new FormUserKayit();
 
@@ -133,7 +127,7 @@ namespace WinFormsApp1
             this.Hide();
         }
 
-        private void FormGirisEkrani_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormGirisEkrani_FormClosing(object sender, FormClosingEventArgs e) //formun doğru şekilde kapanması sağlandı.
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {

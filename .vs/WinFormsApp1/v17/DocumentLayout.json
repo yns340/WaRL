@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User-Y\\Desktop\\githubproje10\\",
+  "WorkspaceRootPath": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\User-Y\\Desktop\\githubproje10\\winformsapp1\\formfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\deepb\\onedrive\\masa\u00FCst\u00FC\\yeni klas\u00F6r\\winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r\\winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72176BD0-E955-4820-956A-67951157C8A2}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\formgirisekrani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,27 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormFilm.cs",
-              "DocumentMoniker": "C:\\Users\\User-Y\\Desktop\\githubproje10\\WinFormsApp1\\FormFilm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\FormFilm.cs",
-              "ToolTip": "C:\\Users\\User-Y\\Desktop\\githubproje10\\WinFormsApp1\\FormFilm.cs",
-              "RelativeToolTip": "WinFormsApp1\\FormFilm.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAswIAAAABTAAAA",
+              "Title": "FormGirisEkrani.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r\\WinFormsApp1\\FormGirisEkrani.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormGirisEkrani.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r\\WinFormsApp1\\FormGirisEkrani.cs [Tasar\u0131m]",
+              "RelativeToolTip": "WinFormsApp1\\FormGirisEkrani.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T19:19:52.966Z",
+              "WhenOpened": "2024-06-11T13:58:42.387Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormGirisEkrani.cs",
+              "DocumentMoniker": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r\\WinFormsApp1\\FormGirisEkrani.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormGirisEkrani.cs",
+              "ToolTip": "C:\\Users\\deepb\\OneDrive\\Masa\u00FCst\u00FC\\Yeni klas\u00F6r\\WinFormsApp1\\FormGirisEkrani.cs",
+              "RelativeToolTip": "WinFormsApp1\\FormGirisEkrani.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIEAAACCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T13:36:00.93Z",
               "EditorCaption": ""
             }
           ]
