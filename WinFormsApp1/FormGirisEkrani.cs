@@ -66,13 +66,11 @@ namespace WinFormsApp1
 
                                 form1.Show();
                                 this.Hide();
-
-                                // Debug için
-                                MessageBox.Show($"Kullanıcı Adı: {KullanıcıGirişi.KullanıcıAdı}, Kullanıcı ID: {KullanıcıGirişi.KullanıcıID}");
                             }
+
                             else
                             {
-                                // Debug için
+                                
                                 MessageBox.Show("IsValidUser metodu başarısız oldu.");
                             }
                         }

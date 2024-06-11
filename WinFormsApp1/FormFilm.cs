@@ -13,7 +13,7 @@ namespace WinFormsApp1
     {
         private string _username;
         private int _kullanıcıID;
-        private DataTable films;
+        private DataTable films; //datatable türünde bir değişken tanımlandı
 
         public FormFilm(string username, int kullanıcıID)
         {
@@ -24,40 +24,40 @@ namespace WinFormsApp1
 
         private void FormFilm_Load(object sender, EventArgs e)
         {
-            LoadFilms();
+            LoadFilms(); //Form yüklenince ilk bu foksiyon çağrılıyor.
         }
 
         private string RootDirectory()
         {
-            DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);
-            return directory.Parent.Parent.Parent.Parent.FullName;
+            DirectoryInfo directory = new DirectoryInfo(Application.StartupPath);//başlangıç dosyasının(.exe uzantılı) bulunduğu yerin tam konumu
+            return directory.Parent.Parent.Parent.Parent.FullName;//başlangıç konumundan .sln dosya uzantılı dosyanın bulunduğu klasöre dek çıkıldı
         }
 
         private string GetDatabasePath()
         {
-            string dirRoot = RootDirectory();
+            string dirRoot = RootDirectory(); //başlangıç konumunun belirlenmesi
             return Path.Combine(dirRoot, "WinFormsApp1", "database", "Database2.accdb");
         }
 
         private void LoadFilms()
         {
-            string databasePath = GetDatabasePath();
-            using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
+            string databasePath = GetDatabasePath(); //database in yolu bulunmalı
+            using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))// data kaynağı olarak verildi bulunan konum
             {
-                string query = "SELECT * FROM filmdizilistesi ORDER BY Kimlik";
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
-                films = new DataTable();
-                adapter.Fill(films);
-                DisplayFilms(films);
+                string query = "SELECT * FROM filmdizilistesi ORDER BY Kimlik"; //konumu verilen database in istenilen tablosu istenilen sıra ile çekildi
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);//bir adapter ile bu bağlantı ve istek birleştirildi
+                films = new DataTable(); //datatable türünde değişken oluşturuldu
+                adapter.Fill(films); //adapter ile bu datatable ın içerisi dolduruldu
+                DisplayFilms(films); //films datatable ı parametre verilerek bu fonksiyon çağrıldı.
             }
         }
 
-        private void DisplayFilms(DataTable films)
+        private void DisplayFilms(DataTable films) //filmleri dinamik olarak oluşturan fonksiyon
         {
-            // Seçilen türleri al
+            
             var selectedGenres = GetSelectedGenres();
 
-            // Tüm panellerin temizlenmesi
+            
             foreach (Control control in this.Controls.OfType<Panel>().Where(panel => panel != panel1).ToList())
             {
                 this.Controls.Remove(control);
@@ -67,11 +67,11 @@ namespace WinFormsApp1
             int panelWidth = ClientSize.Width / 3;
             int panelHeight = ClientSize.Height - panel1.Height;
 
-            for (int i = 0; i < films.Rows.Count; i++)
+            for (int i = 0; i < films.Rows.Count; i++) //film sayısı kadar tekrar edecek
             {
-                DataRow row = films.Rows[i];
+                DataRow row = films.Rows[i]; //Satırları satır bilgisi olarak tutmak için 
 
-                // Seçilen türlere uygun filmler varsa sadece o türlere ait panelleri oluştur
+                
                 if (selectedGenres.All(genre => row["Türü"].ToString().Contains(genre)))
                 {
                     Panel panel = new Panel
@@ -84,9 +84,9 @@ namespace WinFormsApp1
                         BackColor = Color.White,
                     };
 
-                    string imageName = row["poster"].ToString();
+                    string imageName = row["poster"].ToString(); //her bir filmin kendi poster bilgileri
                     string dirRoot = RootDirectory();
-                    string imagePath = Path.Combine(dirRoot, "WinFormsApp1", "filmposter", imageName);
+                    string imagePath = Path.Combine(dirRoot, "WinFormsApp1", "filmposter", imageName); //.sln ye kadar inilen yerden istenilen yere kadar yol verildi
 
                     PictureBox pictureBox = new PictureBox
                     {
@@ -99,7 +99,7 @@ namespace WinFormsApp1
                         Height = panelHeight - 350,
                     };
 
-                    panel.Controls.Add(pictureBox);
+                    panel.Controls.Add(pictureBox); //sonradan verilecek konumlarda sıkıntı çıkmaması için önceden panele eklendi
 
                     Label label = new Label
                     {
@@ -113,7 +113,7 @@ namespace WinFormsApp1
                         Location = new Point(75, pictureBox.Bottom + 20),
                     };
 
-                    panel.Controls.Add(label);
+                    panel.Controls.Add(label); //sonradan verilecek konumlarda sıkıntı çıkmaması için önceden panele eklendi
 
                     Button button = new Button
                     {
@@ -125,8 +125,8 @@ namespace WinFormsApp1
                     };
                     button.Click += ButtonClick;
 
-                    panel.Controls.Add(button);
-                    this.Controls.Add(panel);
+                    panel.Controls.Add(button); //son olarak panele eklendi
+                    this.Controls.Add(panel); //panel forma kontrol olarak eklendi.
                 }
             }
 
