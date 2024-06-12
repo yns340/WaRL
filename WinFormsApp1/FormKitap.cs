@@ -15,10 +15,10 @@ namespace WinFormsApp1
         private int _kullanıcıID;
         private DataTable kitaplar;
 
-        public FormKitap(string username, int kullanıcıID)
+        public FormKitap(string username, int kullanıcıID)//KullanıcID ve username parametre olarak alınır.
         {
             InitializeComponent();
-            this._username = username;
+            this._username = username;//Yukarıda tanımlanan değişkenlere alınan parametreler eşitlenşr.
             this._kullanıcıID = kullanıcıID;
         }
 
@@ -52,7 +52,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void DisplayKitaplar(DataTable kitaplar)
+        private void DisplayKitaplar(DataTable kitaplar)//Bu fonksiyonda paneller veritabanından dinamik olarak çekilip forma eklenir.
         {
             var selectedGenres = GetSelectedGenres(); //checkboxlarla seçilen türler alındı.
 
@@ -140,8 +140,8 @@ namespace WinFormsApp1
         private void ButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
-
-            int KitapID = Convert.ToInt32(button.Tag);
+           
+            int KitapID = Convert.ToInt32(button.Tag); // KitapId ile button tag'i birbirine eşitlenerek butona tıklandığında KitapID'nin  alınması sağlanır.
             int kullaniciID = GetCurrentUserID();
 
             AddKitapToWatchList(KitapID, kullaniciID);
@@ -158,7 +158,8 @@ namespace WinFormsApp1
             {
                 string databasePath = GetDatabasePath();
                 using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
-                {
+                {  
+                    //Ekli olan kitabın tekrar eklenmesi engellenir.
                     string kontrolsorgu = "SELECT COUNT(*) FROM okumaListesi WHERE KullanıcıID=@KullanıcıID AND KitapID=@KitapID";
                     using (OleDbCommand sorgukmt = new OleDbCommand(kontrolsorgu, connection))
                     {
@@ -166,7 +167,7 @@ namespace WinFormsApp1
                         sorgukmt.Parameters.AddWithValue("@KitapID,", KitapID);
                         connection.Open();
 
-                        int sayı = (int)sorgukmt.ExecuteScalar();
+                        int sayı = (int)sorgukmt.ExecuteScalar();//Eklenen kitap, sayı değişkenine atanır.Sayı>0 ise kitap ekli diye uyarı verilir
                         if (sayı > 0)
                         {
                             MessageBox.Show("Bu kitap zaten okuma listenizde bulunuyor.");
@@ -174,6 +175,7 @@ namespace WinFormsApp1
                         else
                         {
                             connection.Close();
+                            //Kitap ekli değilse kullanıcıId ve kitapID aracılığıyla okumalistesi tablosuna eklenir.
                             string query = "INSERT INTO okumaListesi (KullanıcıID, KitapID) VALUES (@KullanıcıID, @KitapID)";
                             using (OleDbCommand command = new OleDbCommand(query, connection))
                             {

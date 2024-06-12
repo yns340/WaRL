@@ -32,7 +32,7 @@ namespace WinFormsApp1
                 DataTable readingList = GetReadingListFromDatabase(_kullaniciID);
 
                
-                dgv.DataSource = readingList;
+                dgv.DataSource = readingList;//Datagridview'in veri kaynağı readinglist olarak belirlenir.
 
                 if (!dgv.Columns.Contains("RemoveButton"))
                 {
@@ -45,7 +45,7 @@ namespace WinFormsApp1
                         //Image = WinFormsApp1.Properties.Resources.trash,
                         Width = 50
                     };
-                    dgv.Columns.Add(removeButtonColumn);
+                    dgv.Columns.Add(removeButtonColumn);//Listeden kaldırma butonu DAtagridview'in sütunlarına eklenir.
                 }
             }
             catch (Exception ex)
@@ -74,9 +74,10 @@ namespace WinFormsApp1
             // Veritabanına bağlanma ve okuma listesi sorgusunu yürütme
             using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
+                //Bu sorgu ile Kitaplar tablosundan istenilen bilgiler çekilir.
                 string query = "SELECT Kitaplar.KitapAdı,Kitaplar.Yazar,Kitaplar.Türler " +
                                "FROM Kitaplar " +
-                               "INNER JOIN okumaListesi ON Kitaplar.KitapID=okumaListesi.KitapID " +
+                               "INNER JOIN okumaListesi ON Kitaplar.KitapID=okumaListesi.KitapID " +//KullanıcıID ve KitapId okumalistesi tablosuna eklenir.
                                "WHERE okumaListesi.KullanıcıID = @KullanıcıID";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
@@ -124,20 +125,20 @@ namespace WinFormsApp1
             form.Show();
         }
 
-        private void Dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)//Bu fonksiyonda kitap kaldırmaya tıklandığında olacak işlmeler gerçekleşir.
         {
             if (e.ColumnIndex == dgv.Columns["RemoveButton"].Index && e.RowIndex >= 0)
             {
                 int selectedRowIndex = e.RowIndex;
-                string selectedKitapAdı = dgv.Rows[selectedRowIndex].Cells["KitapAdı"].Value.ToString();
+                string selectedKitapAdı = dgv.Rows[selectedRowIndex].Cells["KitapAdı"].Value.ToString();//Kaldırılmak istenen kitabın bulunduğu satırdan o kitabın ismi alınır.
 
                 DialogResult result = MessageBox.Show($"'{selectedKitapAdı}' adlı kitabı çıkarmak istediğinize emin misiniz?", "Confirm Removal", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
                     int selectedKitapID = GetKitapIDFromDatabase(selectedKitapAdı);
-                    RemoveFromReadingList(selectedKitapID, _kullaniciID);
-                    LoadReadingList();
+                    RemoveFromReadingList(selectedKitapID, _kullaniciID);//Seçilen kitabın Id'si ile kullanıcıId parametre olarak alınarak listeden çıkarma fonksiyonu çağırılır.
+                    LoadReadingList();//Çıkarılan kitap dışında diğer kitapların yüklenmesi sağlanır.
                 }
             }
         }
@@ -149,7 +150,7 @@ namespace WinFormsApp1
 
             using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
-                string query = "SELECT KitapID FROM Kitaplar WHERE KitapAdı = @KitapAdı";
+                string query = "SELECT KitapID FROM Kitaplar WHERE KitapAdı = @KitapAdı";//Kitap adı aracılığuıyla kştabın Id'sine erişilir.
                 OleDbCommand command = new OleDbCommand(query, connection);
                 command.Parameters.AddWithValue("@KitapAdı", kitapAdı);
 
@@ -170,7 +171,7 @@ namespace WinFormsApp1
 
             using (OleDbConnection connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}"))
             {
-                string query = "DELETE FROM okumaListesi WHERE KitapID = @KitapID AND KullanıcıID = @KullanıcıID";
+                string query = "DELETE FROM okumaListesi WHERE KitapID = @KitapID AND KullanıcıID = @KullanıcıID";//Okuma listesinden ID eşleşmeleri sağlanarak istenilen kitabın silinmesi sağlanır.
                 OleDbCommand command = new OleDbCommand(query, connection);
                 command.Parameters.AddWithValue("@KitapID", kitapID);
                 command.Parameters.AddWithValue("@KullanıcıID", kullaniciID);
