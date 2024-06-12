@@ -65,7 +65,6 @@
             pictureBox1.Size = new Size(1213, 702);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
@@ -121,7 +120,6 @@
             label2.Size = new Size(194, 35);
             label2.TabIndex = 5;
             label2.Text = "KÜTÜPHANE";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -134,7 +132,6 @@
             label3.Size = new Size(221, 35);
             label3.TabIndex = 6;
             label3.Text = "İZLEME LİSTESİ";
-            label3.Click += label3_Click;
             // 
             // Form2
             // 
