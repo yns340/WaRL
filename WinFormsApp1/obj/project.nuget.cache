@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LZhl2H7Xz+aBEnT2Gcn49SVCprA9xiAmL+i5INRt1NGnhyNCNgpqOSvndQAZzxj+dzqb0RCf98VC68d34pyNsw==",
+  "dgSpecHash": "sGuViF0IQHGHwfHcncYWbiPddjESLzmIAzQout9KlACRx5Mzouhm5Ap80byTE2uev+JB/0XmkxbZEDD89zLzcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deepb\\OneDrive\\Masaüstü\\WARLSSS\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\deepb\\OneDrive\\Masaüstü\\Sağlam - Kopya - Kopya\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deepb\\.nuget\\packages\\elasticsearch.net\\7.17.5\\elasticsearch.net.7.17.5.nupkg.sha512",
     "C:\\Users\\deepb\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",

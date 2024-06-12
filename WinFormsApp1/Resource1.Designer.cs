@@ -73,9 +73,9 @@ namespace WinFormsApp1 {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap kütüp {
+        internal static System.Drawing.Bitmap kutup {
             get {
-                object obj = ResourceManager.GetObject("kütüp", resourceCulture);
+                object obj = ResourceManager.GetObject("kutup", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
